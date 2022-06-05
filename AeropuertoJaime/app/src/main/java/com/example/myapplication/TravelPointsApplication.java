@@ -2,17 +2,14 @@ package com.example.myapplication;
 
 import android.app.Application;
 
-import com.example.myapplication.Modelos.Consumo;
-import com.example.myapplication.Modelos.Producto;
+import com.example.myapplication.Modelos.Aeropuerto;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class TravelPointsApplication extends Application {
 
-    public  static List<Producto> ListaProductos = new ArrayList<>();
-    public  static List<Consumo> ListaConsumos = new ArrayList<>();
-
+    public  static List<Aeropuerto> ListAeropuertos = new ArrayList<>();
 
     @Override
     public void onCreate() {

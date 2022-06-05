@@ -12,6 +12,7 @@ import com.example.estudiandoaeropuerto.Modelos.Aeropuerto;
 import java.util.ArrayList;
 
 public class NuevoAeropuertoActivity extends AppCompatActivity {
+    //Es como tpa
     private Aeropuertos aero;
 
     @Override
@@ -26,12 +27,19 @@ public class NuevoAeropuertoActivity extends AppCompatActivity {
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Casting del tpa
                 aero = (Aeropuertos) getApplicationContext();
+                //Se crea el objeto aeropuerto
                 Aeropuerto aeropuerto = new Aeropuerto();
+                //Nombre del aeropuerto es la ciudad de origne
                 aeropuerto.setNombreAeropuerto(ciudadOrigen.getText().toString());
+                //Codigo de origen
                 aeropuerto.setCodigo(codigoOrigen.getText().toString());
+                //Lista de destinos de momento vacia
                 aeropuerto.setDestinos(new ArrayList<>());
+                //Se añade a la lista de aeropuertos
                 aero.aeropuertos.add(aeropuerto);
+
                 setResult(RESULT_OK);
                 finish();
             }

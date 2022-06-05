@@ -97,15 +97,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
-
-
-
-
         //Ir a PRoductosActivity
         FloatingActionButton myFab = (FloatingActionButton)findViewById(R.id.floatingActionButton);
 
