@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">ProyectoJaime</string>
+    <string name="media">Media</string>
+    <string name="baja">Baja</string>
+    <string name="alta">Alta</string>
+    <string name="escoger_la_potencia_del_aerogenerador">Escoger la Potencia del Aerogenerador</string>
+    <string name="seleccionar_el_n_mero_de_palas">Seleccionar el número de palas</string>
+    <string name="unipala">UniPala</string>
+    <string name="bipala">BiPala</string>
+    <string name="tripala">TriPala</string>
+    <string name="presupuesto">Presupuesto</string>
+    <string name="descripci_n">Descripción</string>
+    <string name="tipo_de_eje">Tipo de eje:</string>
+    <string name="num_de_palas">Num de Palas:</string>
+    <string name="potencia">Potencia:</string>
+    <string name="seleccionar_la_proxima_fecha_de_producci_n">Seleccionar la proxima fecha de producción</string>
+    <string name="fecha_escogida">Fecha escogida:</string>
+    <string name="urgente">Urgente</string>
+    <string name="fecha">FECHA</string>
+    <string name="id">ID</string>
+    <string name="tipo">TIPO</string>
+</resources>
