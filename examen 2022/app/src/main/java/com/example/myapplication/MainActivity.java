@@ -13,9 +13,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.Modelos.Consumo;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     TravelPointsApplication tpa;
@@ -116,6 +118,20 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(),ProductosActivity.class);
         startActivity(intent);
     }
+
+    //Ir a PRoductosActivity
+    public void limpiarLista(View view){
+        //Casting tpa
+        tpa = (TravelPointsApplication)getApplicationContext();
+        if( tpa.ListaConsumos.size() != 0){
+            List<Consumo> ListaConsumos = new ArrayList<>();
+            tpa.ListaConsumos = ListaConsumos;
+            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(intent);
+        }
+
+    }
+
 
 
 

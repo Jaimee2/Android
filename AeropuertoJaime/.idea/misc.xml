@@ -5,8 +5,11 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.29981884057971014" />
         <entry key="app/src/main/res/layout/destinosactivity.xml" value="0.29981884057971014" />
-        <entry key="app/src/main/res/layout/nuevoaeropuertoactivity.xml" value="0.29981884057971014" />
+        <entry key="app/src/main/res/layout/horariosalidaactivity.xml" value="0.358695652173913" />
+        <entry key="app/src/main/res/layout/horariossalidaactivity.xml" value="1.1511627906976745" />
+        <entry key="app/src/main/res/layout/nuevoaeropuertoactivity.xml" value="0.14507772020725387" />
         <entry key="app/src/main/res/layout/nuevodestinoactivity.xml" value="0.29981884057971014" />
+        <entry key="app/src/main/res/layout/nuevohorariosalida.xml" value="0.358695652173913" />
       </map>
     </option>
   </component>

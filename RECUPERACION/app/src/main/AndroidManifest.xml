@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myapplication">
+    package="com.example.gestionfacturasapp">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:name=".TravelPointsApplication"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyApplication">
+        android:theme="@style/Theme.GestionFacturasApp">
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -19,22 +19,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".NuevosArticulosActivity"
+            android:exported="false">
+        </activity>
+        <activity android:name=".HistorialActivity"
+            android:exported="false">
+        </activity>
+        <activity android:name=".DeudasActivity"
+            android:exported="false">
+        </activity>
 
-        <activity android:name=".NuevoAeropuertoActivity"
-            android:exported="false">
-        </activity>
-        <activity android:name=".DestinosActivity"
-            android:exported="false">
-        </activity>
-        <activity android:name=".NuevoDestinoActivity"
-            android:exported="false">
-        </activity>
-        <activity android:name=".HorarioSalidaActivity"
-            android:exported="false">
-        </activity>
-        <activity android:name=".NuevoHorarioSalidaActivity"
-            android:exported="false">
-        </activity>
     </application>
 
 </manifest>

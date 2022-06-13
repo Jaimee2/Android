@@ -17,7 +17,7 @@ public class DestinosActivity extends AppCompatActivity {
 
     private TravelPointsApplication tpa;
     private ListView listaDestinos;
-    private int posicion;
+    private int posicion_aeropuerto;
     private ArrayAdapter<Destino> adapter;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +26,15 @@ public class DestinosActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            posicion = bundle.getInt("posicion");
+            posicion_aeropuerto = bundle.getInt("posicion");
             //Casting tpa
             tpa = (TravelPointsApplication) getApplicationContext();
 
             //Casting de la listView principal
             listaDestinos = findViewById(R.id.listaDestinos);
-
-            adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,tpa.ListAeropuertos.get(posicion).getDestinos());
+            //Se imprime los destinos del aeropuerto posicion_aeropuerto
+            adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,
+                    tpa.ListAeropuertos.get(posicion_aeropuerto).getDestinos());
 
             try {
                 listaDestinos.setAdapter(adapter);
@@ -43,9 +44,10 @@ public class DestinosActivity extends AppCompatActivity {
             listaDestinos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                   /* Intent intent = new Intent(getApplicationContext(), NuevoDestinoActivity.class);
-                    intent.putExtra("posicion",position);
-                    startActivity(intent);*/
+                    Intent intent = new Intent(getApplicationContext(), HorarioSalidaActivity.class);
+                    intent.putExtra("posicion_destino",position);
+                    intent.putExtra("posicion_aeropuerto",posicion_aeropuerto);
+                    startActivity(intent);
                 }
             });
 
@@ -57,6 +59,7 @@ public class DestinosActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     //Cuado sea pulsado nos vamos a crear un nuevo aeropuerto
                     Intent intent = new Intent(getApplicationContext(), NuevoDestinoActivity.class);
+                    intent.putExtra("posicion_aeropuerto",posicion_aeropuerto);
                     startActivity(intent);
                 }
             });

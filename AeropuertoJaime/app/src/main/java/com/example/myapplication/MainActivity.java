@@ -8,9 +8,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.myapplication.Modelos.Aeropuerto;
 import com.example.myapplication.Modelos.Destino;
+import com.example.myapplication.Modelos.HorarioSalida;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -31,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
 
         //Si no hay nada en la lista le insertamos los valores por defecto
         if(tpa.ListAeropuertos.size() == 0){
+
             inicializarListaAeropuertos(tpa.ListAeropuertos);
+
         }
 
         //Casting de la listView principal
@@ -49,16 +53,11 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Intent intent = new Intent(getApplicationContext(), DestinosActivity.class);
+                //posicion del aeropuerto
                 intent.putExtra("posicion",position);
                 startActivity(intent);
             }
         });
-
-
-
-
-
-
 
         //Casting float buton
         FloatingActionButton botonFlotante = findViewById(R.id.floatingActionButton);
@@ -71,22 +70,37 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
     }
 
     public void inicializarListaAeropuertos(List<Aeropuerto> List_Aeropuertos){
-        Destino destino = new Destino("Barcelona",300);
+        HorarioSalida horarioSalida = new HorarioSalida("12:00","120");
+        List<HorarioSalida> listHS = new ArrayList<>();
+        listHS.add(horarioSalida);
+
+        Destino destino = new Destino("Barcelona",300,listHS);
         List<Destino> listaDestinos= new ArrayList<>();
         listaDestinos.add(destino);
-        Aeropuerto aeropuerto1 = new Aeropuerto("Jaén","1111",listaDestinos);
-        Aeropuerto aeropuerto2 = new Aeropuerto("Madrid","2222",listaDestinos);
-        Aeropuerto aeropuerto3 = new Aeropuerto("Pamplona","3333",listaDestinos);
 
+        Aeropuerto aeropuerto1 = new Aeropuerto("Jaén","1111",listaDestinos);
         List_Aeropuertos.add(aeropuerto1);
+
+        /*******************************************************************************************/
+        HorarioSalida horarioSalida2 = new HorarioSalida("14:00","10");
+
+        List<HorarioSalida> listHS2 = new ArrayList<>();
+        listHS2.add(horarioSalida2);
+
+        Destino destino2 = new Destino("Mallorca",500,listHS2);
+        List<Destino> listaDestinos2 = new ArrayList<>();
+        listaDestinos2.add(destino2);
+
+        Aeropuerto aeropuerto2 = new Aeropuerto("Madrid","2222",listaDestinos2);
         List_Aeropuertos.add(aeropuerto2);
-        List_Aeropuertos.add(aeropuerto3);
+        Toast.makeText(MainActivity.this,"Longitud: "+ List_Aeropuertos.get(0).getDestinos().size() , Toast.LENGTH_SHORT).show();
+        /*******************************************************************************************/
+
+        //Aeropuerto aeropuerto3 = new Aeropuerto("Pamplona","3333",listaDestinos);
+        //List_Aeropuertos.add(aeropuerto3);
 
     }
 }

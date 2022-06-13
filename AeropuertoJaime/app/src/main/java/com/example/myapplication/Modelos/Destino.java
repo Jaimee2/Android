@@ -1,18 +1,20 @@
 package com.example.myapplication.Modelos;
 
+import java.util.List;
+
 public class Destino {
     //Atributos
     private String nombreDestino;
     private int distanciaOrigen;
-    //private List<HorariosSalida> horariosSalidaList;
+    private List<HorarioSalida> horariosSalidaList;
 
     public Destino(){
     }
 
-    public Destino(String nombreDestino, int distanciaOrigen){
+    public Destino(String nombreDestino, int distanciaOrigen,List<HorarioSalida> horariosSalidaList){
         this.nombreDestino = nombreDestino;
         this.distanciaOrigen = distanciaOrigen;
-        //
+        this.horariosSalidaList = horariosSalidaList;
     }
 
     //Setters
@@ -25,6 +27,10 @@ public class Destino {
         this.nombreDestino = nombreDestino;
     }
 
+    public void setHorariosSalidaList(List<HorarioSalida> horariosSalidaList) {
+        this.horariosSalidaList = horariosSalidaList;
+    }
+
     //Getters
 
 
@@ -34,6 +40,10 @@ public class Destino {
 
     public String getNombreDestino() {
         return nombreDestino;
+    }
+
+    public List<HorarioSalida> getHorariosSalidaList() {
+        return horariosSalidaList;
     }
 
     @Override

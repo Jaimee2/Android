@@ -23,7 +23,7 @@ public class NuevoAeropuertoActivity extends AppCompatActivity {
         EditText ciudadOrigen = findViewById(R.id.textCorigen);
         EditText codigo = findViewById(R.id.textCorigen);
 
-        Button buttonGuardar = findViewById(R.id.button);
+        Button buttonGuardar = findViewById(R.id.button123);
 
         buttonGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
